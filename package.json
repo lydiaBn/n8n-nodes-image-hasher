@@ -1,0 +1,44 @@
+{
+  "name": "n8n-nodes-image-hasher",
+  "version": "0.1.0",
+  "description": "An n8n community node that generates perceptual hashes (pHash) of images to detect duplicates and manipulations.",
+  "license": "MIT",
+  "author": {
+    "name": "Lydia Benzemrane",
+    "email": "lydia.benzemrane@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lydiaBn/n8n-nodes-image-hasher.git"
+  },
+  "keywords": [
+    "n8n-community-node",
+    "image-hash",
+    "phash",
+    "duplicate-detection",
+    "image-processing"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && npm run copy-svg",
+    "copy-svg": "copyfiles -u 2 nodes/ImageHasher/imageHash.svg dist/nodes/ImageHasher",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.57.0",
+    "n8n-core": "^1.113.1",
+    "n8n-workflow": "^1.111.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "image-hash": "^5.3.2"
+  }
+}
