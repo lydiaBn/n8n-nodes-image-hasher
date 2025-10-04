@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-image-hasher",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An n8n community node that generates perceptual hashes (pHash) of images to detect duplicates and manipulations.",
   "license": "MIT",
   "author": {
@@ -12,6 +12,7 @@
     "url": "https://github.com/lydiaBn/n8n-nodes-image-hasher.git"
   },
   "keywords": [
+    "n8n-community-node-package",
     "n8n-community-node",
     "image-hash",
     "phash",
@@ -19,6 +20,12 @@
     "image-processing"
   ],
   "main": "dist/index.js",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/ImageHasher/ImageHasher.node.js"
+    ]
+  },
   "scripts": {
     "build": "tsc && npm run copy-svg",
     "copy-svg": "copyfiles -u 2 nodes/ImageHasher/imageHash.svg dist/nodes/ImageHasher",
